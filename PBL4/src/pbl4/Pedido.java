@@ -17,25 +17,26 @@ public class Pedido {
     public Pedido(){
         itens= new ArrayList<>();
     }
+    
     public double totalprice(){
         double totalprice=0;
-        for(int i=0;i<itens.size();i++){
-            totalprice+=itens.get(i).price;
+        for(int i=0;i<getItens().size();i++){
+            totalprice+=getItens().get(i).price;
         }
         return totalprice;
     }
     public double totaldeliverytime(){
         double deliverytime=0;
-        for(int i=0;i<itens.size();i++){
-            deliverytime+=itens.get(i).discount(itens.get(i), this.date);
+        for(int i=0;i<getItens().size();i++){
+            deliverytime+=getItens().get(i).discount(getItens().get(i), this.getDate());
         }
         return deliverytime;
     }
     
     public int totalcandy(){
         int cont=0;
-        for(int i=0;i<itens.size();i++){
-            if(itens.get(i) instanceof Doce){
+        for(int i=0;i<getItens().size();i++){
+            if(getItens().get(i) instanceof Doce){
                 cont++;
             }
         }
@@ -43,8 +44,8 @@ public class Pedido {
     }
     public int totalcolds(){
         int cont=0;
-        for(int i=0;i<itens.size();i++){
-            if(itens.get(i) instanceof Frios){
+        for(int i=0;i<getItens().size();i++){
+            if(getItens().get(i) instanceof Frios){
                 cont++;
             }
         }
@@ -52,8 +53,8 @@ public class Pedido {
     }
     public int totalbreadzinho(){
         int cont=0;
-        for(int i=0;i<itens.size();i++){
-            if(itens.get(i) instanceof Paozinho){
+        for(int i=0;i<getItens().size();i++){
+            if(getItens().get(i) instanceof Paozinho){
                 cont++;
             }
         }
@@ -62,5 +63,21 @@ public class Pedido {
     
     public int totalproducts(){
         return this.totalbreadzinho()+this.totalcandy()+this.totalcolds();
+    }
+
+    public ArrayList<Produtos> getItens() {
+        return itens;
+    }
+
+    public void additem(Produtos item) {
+        this.itens.add(item);
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 }
