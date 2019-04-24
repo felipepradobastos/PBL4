@@ -10,8 +10,17 @@ package pbl4;
  * @author felip
  */
 public class Doce extends Produtos {
-    protected String type;
+    private String type;
     public Doce(){
         this.deliverytime=5;
     }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+    double x;
 }

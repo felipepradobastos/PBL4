@@ -16,6 +16,10 @@ public abstract class Produtos {
     protected int lifetime;
     
     // Function
+    
+    
+    
+    
     public double discount(Produtos item, String date){
         if(date.equalsIgnoreCase("sabado") || date.equalsIgnoreCase("domingo")){
             if(item instanceof Doce){
@@ -66,6 +70,5 @@ public abstract class Produtos {
     public void setLifetime(int lifetime) {
         this.lifetime = lifetime;
     }
-    
     
 }

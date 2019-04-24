@@ -10,8 +10,17 @@ package pbl4;
  * @author felip
  */
 public class Paozinho extends Produtos{
-    protected String flavor;
+    private String flavor;
     public Paozinho(){
         this.deliverytime=2;
     }
+
+    public String getFlavor() {
+        return flavor;
+    }
+
+    public void setFlavor(String flavor) {
+        this.flavor = flavor;
+    }
+    
 }
